@@ -9,7 +9,7 @@ require 'jeweler/utils/core_ext/NilClass'
 require 'jeweler/utils/core_ext/Array'
 require 'jeweler/utils/core_ext/ActiveModelErrors'
 
-require 'jeweler/Service'
+require 'jeweler/service'
 
 module Jeweler
   module Utils
