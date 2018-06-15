@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hours: 9.99
+  planned_hours: 9.99
+  rate: 9.99
+  description: MyString
+  complete: false
+
+two:
+  hours: 9.99
+  planned_hours: 9.99
+  rate: 9.99
+  description: MyString
+  complete: false
