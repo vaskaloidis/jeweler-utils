@@ -3,7 +3,7 @@
 <p align="center">
 <a href="http://jeweler-staging.bluehelmet.software"><img width="400" src="https://raw.githubusercontent.com/vaskaloidis/jeweler/master/app/assets/images/jeweler-logo-full-alternate.png"></a>
 
-[![CircleCI](https://circleci.com/gh/vaskaloidis/jeweler.svg?style=svg&circle-token=0695c448bed1c7ed2fc9e4d982aa38f0651ca0c4)](https://circleci.com/gh/vaskaloidis/jeweler)
+[![CircleCI](https://circleci.com/gh/vaskaloidis/jeweler-utils.svg?style=svg)](https://circleci.com/gh/vaskaloidis/jeweler-utils)
 [![Slack](https://img.shields.io/badge/discuss-Slack-brightgreen.svg)](https://bluehelmet.slack.com)
 [![Coverage Status](https://coveralls.io/repos/github/vaskaloidis/jeweler/badge.svg?branch=master)](https://coveralls.io/github/vaskaloidis/jeweler?branch=master)
 </p>
