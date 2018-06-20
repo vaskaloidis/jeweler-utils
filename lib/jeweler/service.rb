@@ -1,4 +1,12 @@
+# TODO: Add RDocs
+# TODO: Specify the Rescue From Catching ALL Errors. Only Specific ones, then handle them
+# TODO: Implement various tools from ActiveModel Callbacks like serialization etc... http://www.thegreatcodeadventure.com/smarter-rails-services-with-active-record-modules/
 module Jeweler
+
+  # Service Object Class that all Jeweler Service Objcts will inherit from, allowing them
+  # to report errors, fatal-errors, success? and a success_message. This class also logs
+  # any errors that happen in the `call` of the Service Object, logging the tennant-id
+  # (project ID), the current-user ID, the action and controllers, and IP Address
   class Service
     attr_accessor :result, :errors, :fatals, :success, :success_message
 
@@ -16,9 +24,11 @@ module Jeweler
             []
         )
 
+        @tapped_result = service.call
         begin
-          @tapped_result = service.call
         rescue StandardError => e
+          # @TODO: Use the new logger for multi-tenant debugging
+          # @TODO: Rescue from specific Errors, not this one
           Rails.logger.fatal('ServiceObject Exception: ' + e.message)
           service.instance_variable_set(
               '@success',
