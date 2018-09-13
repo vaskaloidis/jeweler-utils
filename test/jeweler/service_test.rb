@@ -48,13 +48,13 @@ class Jeweler::ServiceTest < ActiveSupport::TestCase
   end
 
   test 'multiple fatals' do
-    class ServiceObject4 < Jeweler::Service
+    class ServiceObject3_1 < Jeweler::Service
       def call
         fatals << 'fatal 1'
         fatals << 'fatal 2'
       end
     end
-    so = ServiceObject4.call
+    so = ServiceObject3_1.call
     assert_equal 1, so.errors.count
     assert_equal '', so.result_message
     assert_includes so.errors, 'There was an error. Contact Support.'
