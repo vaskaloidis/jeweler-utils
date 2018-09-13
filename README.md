@@ -16,10 +16,12 @@ A utility package of various Core Extensions, helpers and Ruby Patterns we use f
 Used to build a Service Object.
 
 - Returns `result` method which is set to the value of the result of the `Call` method
-- Returns `errors` method with an Array of any errors placed in the `@errors` variable in the Service Object. These also are logged as a warning. This is combined with the value of the `fatals` array, which contains more serious errors. These get logged as errors.
-- It catches and handles Exceptions raised in the call method, so do all the important processing there. 
-- Soon it will be logging important information about them specifically for our SAAS platform, like the User ID, ProjectID of the error, to Rollbar
-- If `@success` is not set in `call`, then it sets it for you: returns `success` True if errors and fatals is empty, otherwise False.
+- Returns any errors in the `@errors` variable with initialized as an empty Array. Place error messages here.
+  - These can optionally be logged as a warning. 
+- Fatal errors can be stored in `@fatals` Array (initialized empty). 
+   - This automatically enters the generic warning message `There was an error. Contact Support.` into `@errors`
+   - These automatically get logged as errors.
+- Succesful message is stored in `@result_message`, initialized as an empty String `''`
 
 **Example:**
 
@@ -39,14 +41,22 @@ class UpdateTask < Jeweler::Service
   end
 
   private
-
   attr_reader :task
 end
-
 # Usage:
 @service_object = DestroyTask.call(@task)
 @service_object.errors # Combined array of fatals and errors. They are logged differently by Jeweler::Service though
 @service_object.result # Task<id: 7, hours: 3...> 
+
+class ServiceObject1 < Jeweler::Service
+  def call
+    errors << 'error 1'
+    errors << 'error 2'
+    fatals << 'fatal 1'
+  end
+end
+so = ServiceObject1.call
+# ServiceObject1.errors = ['error 1', 'error 2', 'There was an error. Contact Support.']
 ```
 
 
