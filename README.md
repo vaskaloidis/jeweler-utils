@@ -1,7 +1,7 @@
 # Jeweler::Utils
 
 <p align="center">
-<a href="http://jeweler-staging.bluehelmet.software"><img width="400" src="https://raw.githubusercontent.com/vaskaloidis/jeweler/master/app/assets/images/jeweler-logo-full-alternate.png"></a>
+<a href="http://staging.jewelercrm.io"><img width="400" src="https://raw.githubusercontent.com/vaskaloidis/jeweler/master/app/assets/images/jeweler-logo-full-alternate.png"></a>
 
 [![CircleCI](https://circleci.com/gh/vaskaloidis/jeweler-utils.svg?style=svg)](https://circleci.com/gh/vaskaloidis/jeweler-utils)
 [![Slack](https://img.shields.io/badge/discuss-Slack-brightgreen.svg)](https://bluehelmet.slack.com)
@@ -17,8 +17,8 @@ Used to build a Service Object.
 
 - Returns `result` method which is set to the value of the result of the `Call` method
 - Returns any errors in the `@errors` variable with initialized as an empty Array. Place error messages here.
-  - These can optionally be logged as a warning. 
-- Fatal errors can be stored in `@fatals` Array (initialized empty). 
+  - These can optionally be logged as a warning.
+- Fatal errors can be stored in `@fatals` Array (initialized empty).
    - This automatically enters the generic warning message `There was an error. Contact Support.` into `@errors`
    - These automatically get logged as errors.
 - Succesful message is stored in `@result_message`, initialized as an empty String `''`
@@ -46,7 +46,7 @@ end
 # Usage:
 @service_object = DestroyTask.call(@task)
 @service_object.errors # Combined array of fatals and errors. They are logged differently by Jeweler::Service though
-@service_object.result # Task<id: 7, hours: 3...> 
+@service_object.result # Task<id: 7, hours: 3...>
 
 class ServiceObject1 < Jeweler::Service
   def call
@@ -114,10 +114,10 @@ These, as well as the methods above are for displaying these numbers in the UI. 
 .log_errors(prefix_msg = nil) - Logs all of these errors, as errors, prefixed with the param (optionally)
 
 ```ruby
-sprint.errors.full_messages.log_errors('Error Saving Sprint') 
+sprint.errors.full_messages.log_errors('Error Saving Sprint')
 # log.warn - Error Saving Sprint: the validation error while saving sprint
- 
-sprint.errors.full_messages.log_errors 
+
+sprint.errors.full_messages.log_errors
 # log.warn - the validation error while saving sprint
 
 ```
