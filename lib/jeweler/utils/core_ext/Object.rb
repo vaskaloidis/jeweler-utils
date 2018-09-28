@@ -1,8 +1,11 @@
 class Object
-  def is_number?
-    Float(number) || BigDecimal(number) || Integer(number)
-    true
-  rescue ArgumentError
+  def number?
+    begin
+      result = Float(number)
+      return result if result
+    rescue ArgumentError
+      false
+    end
     false
   end
 end

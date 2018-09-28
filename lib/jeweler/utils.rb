@@ -1,4 +1,5 @@
 require 'jeweler/utils/railtie'
+# require 'jeweler/utils/core_ext/Object'
 require 'jeweler/utils/core_ext/String'
 require 'jeweler/utils/core_ext/BigDecimal'
 require 'jeweler/utils/core_ext/Decimal'

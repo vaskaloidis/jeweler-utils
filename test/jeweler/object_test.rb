@@ -1,19 +1,93 @@
 require 'test_helper'
 
-class Jeweler::ObjectTest < ActiveSupport::TestCase
-  test 'if string of numbers valid' do
-    input = '50.45'
-    assert_equal input.is_number?, '$50.45'
+class Jeweler::StringTest < ActiveSupport::TestCase
+  test 'true 50.45 is a number' do
+    skip 'feature not ready'
+    input = 50.45
+    assert input.number?
   end
 
-  test 'string to_b converts explicit boolean strings correctly' do
-    assert 'true'.to_b
-    refute 'false'.to_b
-    #   TODO: Check it raises an exception for anything else
+  test 'false 45d is not a number' do
+    skip 'feature not ready'
+    input = '45d'.number?
+    refute input.number?
   end
 
-  test 'true? method returns true for explicit strings' do
-    assert 'true'.true?
-    refute 'truue'.true?
+  test 'true 45 as a string is a number' do
+    skip 'feature not ready'
+    input = '45'
+    assert input.number?
+  end
+
+  test 'true 45.65 as a string is a number' do
+    skip 'feature not ready'
+    input = '45.65'
+    assert input.number?
+  end
+
+  test 'true 0.65 as a string is a number' do
+    skip 'feature not ready'
+    input = '0.65'
+    assert input.number?
+  end
+
+  test 'true .65 as a string is a number' do
+    skip 'feature not ready'
+    input = '.65'
+    assert input.number?
+  end
+
+  test 'true .6512341234 as a string is a number' do
+    skip 'feature not ready'
+    input = '.6512341234'
+    assert input.number?
+  end
+
+  test 'true 1233211.6512341234 as a string is a number' do
+    skip 'feature not ready'
+    input = '1233211.6512341234'
+    assert input.number?
+  end
+
+  test 'false asdfe3234 is not a number' do
+    skip 'feature not ready'
+    input = asdfe3234.number?
+    refute input.number?
+  end
+
+  test 'true 45 is a number' do
+    skip 'feature not ready'
+    input = 45
+    assert input.number?
+  end
+
+  test 'true 45.65 is a number' do
+    skip 'feature not ready'
+    input = 45.65
+    assert input.number?
+  end
+
+  test 'true 0.65 is a number' do
+    skip 'feature not ready'
+    input = 0.65
+    assert input.number?
+  end
+
+  test 'true .65 is a number' do
+    skip 'feature not ready'
+    input = 0.65
+    assert input.number?
+  end
+
+  test 'true .6512341234 is a number' do
+    skip 'feature not ready'
+    input = 0.6512341234
+    assert input.number?
+  end
+
+  test 'true 1233211.6512341234 is a number' do
+    skip 'feature not ready'
+    input = 1_233_211.6512341234
+    assert input.number?
   end
 end
