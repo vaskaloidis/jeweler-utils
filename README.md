@@ -8,7 +8,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/vaskaloidis/jeweler/badge.svg?branch=master)](https://coveralls.io/github/vaskaloidis/jeweler?branch=master)
 </p>
 
-A utility package of various Core Extensions, helpers and Ruby Patterns we use for developing Jeweler. 
+A utility package of various Core Extensions, helpers and Ruby Patterns we use for developing Jeweler.
 
 ## Usage
 
@@ -21,7 +21,7 @@ Used to build a Service Object.
 - Fatal errors can be stored in `@fatals` Array (initialized empty).
    - This automatically enters the generic warning message `There was an error. Contact Support.` into `@errors`
    - These automatically get logged as errors.
-- Succesful message is stored in `@result_message`, initialized as an empty String `''`
+- Successful message is stored in `@result_message`, initialized as an empty String `''`
 
 **Example:**
 

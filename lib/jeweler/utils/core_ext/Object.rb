@@ -1,8 +1,8 @@
 class Object
   def number?
     begin
-      result = Float(number)
-      return result if result
+      result = Float(self)
+      return true if result
     rescue ArgumentError
       false
     end
