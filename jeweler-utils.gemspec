@@ -16,10 +16,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.2.0"
-
   s.add_development_dependency "sqlite3"
   s.add_dependency(%q<activerecord>.freeze, [">= 4.2.6"])
   s.add_dependency(%q<actionpack>.freeze, [">= 4.2.6"])
   s.add_dependency(%q<virtus>.freeze, [">= 0"])
+  s.add_dependency("rails", [">= 5.2.0"]
 end
